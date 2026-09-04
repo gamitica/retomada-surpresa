@@ -33,9 +33,10 @@ body {
 
     text-align: center;
 
-    padding: 30px;
+    padding: 25px;
 
     position: relative;
+
     z-index: 2;
 }
 
@@ -57,6 +58,10 @@ body {
     color: #cdb8d4;
 
     font-size: 18px;
+
+    max-width: 500px;
+
+    line-height: 1.6;
 
     margin-bottom: 35px;
 }
@@ -108,13 +113,15 @@ button:hover {
 #surpresa {
     display: none;
 
+    width: 100%;
+
     min-height: 100vh;
 
-    max-width: 800px;
+    max-width: 850px;
 
     margin: auto;
 
-    padding: 40px;
+    padding: 40px 30px;
 
     flex-direction: column;
 
@@ -132,6 +139,8 @@ button:hover {
 }
 
 #surpresa p {
+    width: 100%;
+
     max-width: 650px;
 
     color: #d8cbdc;
@@ -143,7 +152,7 @@ button:hover {
     margin-bottom: 22px;
 }
 
-#surpresa p:first-child {
+#surpresa .frase-inicial {
     font-family: Georgia, serif;
 
     font-size: 28px;
@@ -153,14 +162,53 @@ button:hover {
     margin-bottom: 35px;
 }
 
-#surpresa h2 {
+
+/* =========================
+   RETOMADA
+========================= */
+
+.revelacao {
+    font-family: Georgia, serif;
+
+    font-size: clamp(45px, 10vw, 100px);
+
+    letter-spacing: 15px;
+
     margin: 35px 0;
+
+    color: white;
+
+    opacity: 0;
+
+    transform: scale(0.5);
+
+    filter: blur(15px);
+
+    animation: revelarRetomada 3s ease forwards;
+
+    animation-delay: 1.5s;
+
+    text-shadow:
+        0 0 10px #ffffff,
+        0 0 25px #a348bd,
+        0 0 50px #7d2d94;
+}
+
+
+/* =========================
+   FRASE FINAL
+========================= */
+
+#surpresa h2 {
+    margin: 30px 0;
 
     font-family: Georgia, serif;
 
-    font-size: clamp(38px, 7vw, 70px);
+    font-size: clamp(36px, 7vw, 70px);
 
     color: #d6aa45;
+
+    line-height: 1.1;
 
     text-shadow:
         0 0 15px rgba(214, 170, 69, 0.4);
@@ -221,7 +269,9 @@ button:hover {
 }
 
 
-/* POSIÇÃO DOS CORAÇÕES */
+/* =========================
+   POSIÇÃO DOS CORAÇÕES
+========================= */
 
 .coracoes span:nth-child(1) {
     left: 5%;
@@ -274,7 +324,9 @@ button:hover {
 }
 
 
-/* ANIMAÇÃO DOS CORAÇÕES */
+/* =========================
+   ANIMAÇÃO DOS CORAÇÕES
+========================= */
 
 @keyframes subirCoracao {
 
@@ -306,7 +358,9 @@ button:hover {
 }
 
 
-/* ANIMAÇÃO DA MENSAGEM */
+/* =========================
+   ANIMAÇÃO DA MENSAGEM
+========================= */
 
 @keyframes aparecer {
 
@@ -320,6 +374,178 @@ button:hover {
         opacity: 1;
 
         transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   REVELAÇÃO RETOMADA
+========================= */
+
+@keyframes revelarRetomada {
+
+    0% {
+        opacity: 0;
+
+        transform: scale(0.5);
+
+        filter: blur(15px);
+
+        letter-spacing: 35px;
+    }
+
+    40% {
+        opacity: 0.5;
+
+        transform: scale(0.85);
+
+        filter: blur(5px);
+
+        letter-spacing: 25px;
+    }
+
+    70% {
+        opacity: 1;
+
+        transform: scale(1.1);
+
+        filter: blur(0);
+
+        letter-spacing: 18px;
+
+        text-shadow:
+            0 0 10px #ffffff,
+            0 0 25px #a348bd,
+            0 0 55px #7d2d94,
+            0 0 90px #7d2d94;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: scale(1);
+
+        filter: blur(0);
+
+        letter-spacing: 15px;
+
+        text-shadow:
+            0 0 10px #ffffff,
+            0 0 20px #a348bd,
+            0 0 40px #7d2d94,
+            0 0 70px #7d2d94;
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    #telaInicial {
+        padding: 25px 20px;
+    }
+
+    #telaInicial h1 {
+        font-size: 58px;
+
+        letter-spacing: 9px;
+    }
+
+    #telaInicial p {
+        font-size: 16px;
+
+        max-width: 320px;
+    }
+
+    button {
+        padding: 15px 38px;
+
+        font-size: 14px;
+
+        letter-spacing: 4px;
+    }
+
+
+    #surpresa {
+        padding: 30px 22px;
+
+        overflow-y: auto;
+    }
+
+    #surpresa p {
+        font-size: 16px;
+
+        line-height: 1.7;
+
+        margin-bottom: 18px;
+    }
+
+    #surpresa .frase-inicial {
+        font-size: 23px;
+
+        line-height: 1.4;
+
+        margin-bottom: 25px;
+    }
+
+    .revelacao {
+        font-size: 43px;
+
+        letter-spacing: 7px;
+
+        margin: 25px 0;
+    }
+
+    #surpresa h2 {
+        font-size: 38px;
+
+        margin: 25px 0;
+    }
+
+    #surpresa .orgulho {
+        font-size: 25px;
+
+        line-height: 1.4;
+
+        margin-top: 15px;
+    }
+
+}
+
+
+/* =========================
+   CELULAR PEQUENO
+========================= */
+
+@media (max-width: 380px) {
+
+    #telaInicial h1 {
+        font-size: 48px;
+
+        letter-spacing: 7px;
+    }
+
+    #telaInicial p {
+        font-size: 15px;
+    }
+
+    .revelacao {
+        font-size: 36px;
+
+        letter-spacing: 5px;
+    }
+
+    #surpresa h2 {
+        font-size: 32px;
+    }
+
+    #surpresa .orgulho {
+        font-size: 22px;
     }
 
 }
