@@ -153,6 +153,38 @@ button:hover {
     margin-bottom: 35px;
 }
 
+
+/* =========================
+   REVELAÇÃO - RETOMADA
+========================= */
+
+.revelacao {
+    font-family: Georgia, serif;
+
+    font-size: clamp(50px, 10vw, 100px);
+
+    letter-spacing: 15px;
+
+    margin: 30px 0;
+
+    color: #ffffff;
+
+    opacity: 0;
+
+    animation: revelarRetomada 2.5s ease forwards;
+
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 15px #a348bd,
+        0 0 30px #7d2d94,
+        0 0 60px #7d2d94;
+}
+
+
+/* =========================
+   FRASE FINAL
+========================= */
+
 #surpresa h2 {
     margin: 35px 0;
 
@@ -221,7 +253,9 @@ button:hover {
 }
 
 
-/* POSIÇÃO DOS CORAÇÕES */
+/* =========================
+   POSIÇÃO DOS CORAÇÕES
+========================= */
 
 .coracoes span:nth-child(1) {
     left: 5%;
@@ -274,7 +308,9 @@ button:hover {
 }
 
 
-/* ANIMAÇÃO DOS CORAÇÕES */
+/* =========================
+   ANIMAÇÃO DOS CORAÇÕES
+========================= */
 
 @keyframes subirCoracao {
 
@@ -306,7 +342,9 @@ button:hover {
 }
 
 
-/* ANIMAÇÃO DA MENSAGEM */
+/* =========================
+   ANIMAÇÃO DA MENSAGEM
+========================= */
 
 @keyframes aparecer {
 
@@ -320,6 +358,63 @@ button:hover {
         opacity: 1;
 
         transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   ANIMAÇÃO DA REVELAÇÃO
+========================= */
+
+@keyframes revelarRetomada {
+
+    0% {
+        opacity: 0;
+
+        transform: scale(0.5);
+
+        letter-spacing: 35px;
+
+        filter: blur(12px);
+    }
+
+    40% {
+        opacity: 0.5;
+
+        transform: scale(0.85);
+
+        filter: blur(5px);
+    }
+
+    70% {
+        opacity: 1;
+
+        transform: scale(1.05);
+
+        filter: blur(0);
+
+        text-shadow:
+            0 0 5px #ffffff,
+            0 0 20px #a348bd,
+            0 0 50px #7d2d94,
+            0 0 90px #7d2d94;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: scale(1);
+
+        letter-spacing: 15px;
+
+        filter: blur(0);
+
+        text-shadow:
+            0 0 5px #ffffff,
+            0 0 15px #a348bd,
+            0 0 30px #7d2d94,
+            0 0 60px #7d2d94;
     }
 
 }
