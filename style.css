@@ -36,7 +36,6 @@ body {
     padding: 30px;
 
     position: relative;
-
     z-index: 2;
 }
 
@@ -154,43 +153,6 @@ button:hover {
     margin-bottom: 35px;
 }
 
-
-/* =========================
-   RETOMADA - REVELAÇÃO
-========================= */
-
-.revelacao {
-    font-family: Georgia, serif;
-
-    font-size: clamp(50px, 10vw, 100px);
-
-    letter-spacing: 15px;
-
-    margin: 40px 0;
-
-    color: white;
-
-    opacity: 0;
-
-    transform: scale(0.5);
-
-    filter: blur(15px);
-
-    animation: revelarRetomada 3s ease forwards;
-
-    animation-delay: 1.5s;
-
-    text-shadow:
-        0 0 10px #ffffff,
-        0 0 25px #a348bd,
-        0 0 50px #7d2d94;
-}
-
-
-/* =========================
-   FRASE FINAL
-========================= */
-
 #surpresa h2 {
     margin: 35px 0;
 
@@ -259,9 +221,7 @@ button:hover {
 }
 
 
-/* =========================
-   POSIÇÃO DOS CORAÇÕES
-========================= */
+/* POSIÇÃO DOS CORAÇÕES */
 
 .coracoes span:nth-child(1) {
     left: 5%;
@@ -314,9 +274,7 @@ button:hover {
 }
 
 
-/* =========================
-   ANIMAÇÃO DOS CORAÇÕES
-========================= */
+/* ANIMAÇÃO DOS CORAÇÕES */
 
 @keyframes subirCoracao {
 
@@ -348,9 +306,7 @@ button:hover {
 }
 
 
-/* =========================
-   ANIMAÇÃO DA MENSAGEM
-========================= */
+/* ANIMAÇÃO DA MENSAGEM */
 
 @keyframes aparecer {
 
@@ -364,67 +320,6 @@ button:hover {
         opacity: 1;
 
         transform: translateY(0);
-    }
-
-}
-
-
-/* =========================
-   ANIMAÇÃO DA REVELAÇÃO
-========================= */
-
-@keyframes revelarRetomada {
-
-    0% {
-        opacity: 0;
-
-        transform: scale(0.5);
-
-        filter: blur(15px);
-
-        letter-spacing: 35px;
-    }
-
-    40% {
-        opacity: 0.5;
-
-        transform: scale(0.85);
-
-        filter: blur(5px);
-
-        letter-spacing: 25px;
-    }
-
-    70% {
-        opacity: 1;
-
-        transform: scale(1.1);
-
-        filter: blur(0);
-
-        letter-spacing: 18px;
-
-        text-shadow:
-            0 0 10px #ffffff,
-            0 0 25px #a348bd,
-            0 0 55px #7d2d94,
-            0 0 90px #7d2d94;
-    }
-
-    100% {
-        opacity: 1;
-
-        transform: scale(1);
-
-        filter: blur(0);
-
-        letter-spacing: 15px;
-
-        text-shadow:
-            0 0 10px #ffffff,
-            0 0 20px #a348bd,
-            0 0 40px #7d2d94,
-            0 0 70px #7d2d94;
     }
 
 }
