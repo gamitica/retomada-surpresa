@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at center, #351044 0%, #14091b 40%, #050505 80%);
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   TELA INICIAL
+========================= */
+
+#telaInicial {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    position: relative;
+    z-index: 2;
+}
+
+#telaInicial h1 {
+    font-size: clamp(55px, 10vw, 120px);
+
+    letter-spacing: 15px;
+
+    margin-bottom: 20px;
+
+    font-family: Georgia, serif;
+
+    text-shadow:
+        0 0 10px #7d2d94,
+        0 0 30px #7d2d94;
+}
+
+#telaInicial p {
+    color: #cdb8d4;
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+button {
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid #a348bd;
+
+    padding: 16px 50px;
+
+    font-size: 15px;
+
+    letter-spacing: 5px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 0 10px rgba(163, 72, 189, 0.2);
+
+    position: relative;
+
+    z-index: 5;
+}
+
+button:hover {
+    background: #722487;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 30px rgba(163, 72, 189, 0.7);
+}
+
+
+/* =========================
+   SURPRESA
+========================= */
+
+#surpresa {
+    display: none;
+
+    min-height: 100vh;
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    animation: aparecer 1.5s ease;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+#surpresa p {
+    max-width: 650px;
+
+    color: #d8cbdc;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    margin-bottom: 22px;
+}
+
+#surpresa p:first-child {
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    color: white;
+
+    margin-bottom: 35px;
+}
+
+#surpresa h2 {
+    margin: 35px 0;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(38px, 7vw, 70px);
+
+    color: #d6aa45;
+
+    text-shadow:
+        0 0 15px rgba(214, 170, 69, 0.4);
+}
+
+#surpresa .orgulho {
+    margin-top: 25px;
+
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px rgba(163, 72, 189, 0.5);
+}
+
+
+/* =========================
+   CORAÇÕES
+========================= */
+
+.coracoes {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.coracoes span {
+    position: absolute;
+
+    bottom: -40px;
+
+    color: #c45be8;
+
+    font-size: 20px;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 8px #a348bd,
+        0 0 15px #7d2d94;
+
+    animation: subirCoracao 8s linear infinite;
+}
+
+
+/* POSIÇÃO DOS CORAÇÕES */
+
+.coracoes span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.coracoes span:nth-child(2) {
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.coracoes span:nth-child(3) {
+    left: 27%;
+    animation-delay: 4s;
+}
+
+.coracoes span:nth-child(4) {
+    left: 38%;
+    animation-delay: 1s;
+}
+
+.coracoes span:nth-child(5) {
+    left: 50%;
+    animation-delay: 5s;
+}
+
+.coracoes span:nth-child(6) {
+    left: 62%;
+    animation-delay: 3s;
+}
+
+.coracoes span:nth-child(7) {
+    left: 73%;
+    animation-delay: 6s;
+}
+
+.coracoes span:nth-child(8) {
+    left: 83%;
+    animation-delay: 2.5s;
+}
+
+.coracoes span:nth-child(9) {
+    left: 91%;
+    animation-delay: 4.5s;
+}
+
+.coracoes span:nth-child(10) {
+    left: 97%;
+    animation-delay: 7s;
+}
+
+
+/* ANIMAÇÃO DOS CORAÇÕES */
+
+@keyframes subirCoracao {
+
+    0% {
+        transform: translateY(0) scale(0.5) rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateY(-50vh) scale(1) rotate(15deg);
+
+        opacity: 0.6;
+    }
+
+    85% {
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translateY(-115vh) scale(1.2) rotate(-15deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ANIMAÇÃO DA MENSAGEM */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
